@@ -19,14 +19,16 @@ class Quote extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentQuote: ''
+      currentQuote: '',
+      currentAuthor: ''
     };
     this.newQuote = this.newQuote.bind(this);
+    this.render = this.render.bind(this);
   }
   newQuote() {
     let r = Math.floor(Math.random() * Quotes.quotes.length);
-    let quote = Quotes.quotes[r].quote;
-    this.setState({currentQuote: quote});
+    let quote = Quotes.quotes[r];
+    this.setState( {currentQuote: quote.quote, currentAuthor: quote.author} );
   }
   // We should display a quote at begin
   componentWillMount() {
@@ -34,6 +36,9 @@ class Quote extends Component {
   }
   render() {
     // console.log(quotes[0]);
+    let tweetMessage = this.state.currentQuote + '\n--' + this.state.currentAuthor
+    let tweetLink = 'https://twitter.com/intent/tweet?text=' + escape(tweetMessage) 
+    tweetLink += '&hastag=%23StarWars&via=Tarrke'
     return (
       <div id="quote-box">
         <h1>Quote</h1>
@@ -44,10 +49,11 @@ class Quote extends Component {
           { this.state.currentQuote }
           </div>
           <div id="author">
+          { this.state.currentAuthor }
           </div>
         </div>
         <div id="buttons">
-          <a id="tweet-quote">Tweet</a>
+          <a id="tweet-quote" href= { tweetLink } target="_blank">Tweet</a>
           <button id="new-quote" onClick={this.newQuote}>New Quote!</button>
         </div>
       </div>
