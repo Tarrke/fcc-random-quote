@@ -2,4 +2,95 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #222;
+}
+
+.quote-box {
+  margin-top: 5em;
+  background-color: #222;
+  display: flex;
+  flex-flow: column;
+  /*width: 70%;*/
+  padding: 10px;
+  /*max-width: 250px;*/
+  color: #EEE;
+  align-content: center;
+  align-items: center;
+}
+
+.quote {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: 5px solid yellow;
+  color: yellow;
+  border-radius: 5%;
+  background-color: black;
+  padding: 20px;
+  width: 25vw;
+  height: 25vw;
+  max-height: 250px;
+  max-width: 250px;
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.quoteAuthor {
+  align-content: right;
+  text-align: right;
+}
+
+.quoteText {
+  text-align: justify;
+  margin-bottom: 1em;
+  min-height: 4em;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buttons .rightButtons {
+  align-items: right;
+  align-self: right;
+  display: flex;
+  flex-flow: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.buttons .leftButtons {
+  align-items: left;
+  align-self: left;
+}
+
+.button {
+  height: 2em;
+  border: none;
+  outline: none;
+  border-radius: 5%;
+  
+}
+.button:hover {
+  opacity: 0.9;
+}
+
+.fa {
+  padding: 0px;
+  font-size: 2em;
+  width: 2em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fab:hover {
+  opacity: 0.7;
+}
+
+.fa-twitter {
+  color:rgb(0,172,237);
 }

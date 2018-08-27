@@ -40,21 +40,25 @@ class Quote extends Component {
     let tweetLink = 'https://twitter.com/intent/tweet?text=' + escape(tweetMessage) 
     tweetLink += '&hastag=%23StarWars&via=Tarrke'
     return (
-      <div id="quote-box">
+      <div id="quote-box" className="quote-box">
         <h1>Quote</h1>
-        <div id="quote">
+        <div id="quote" className="quote">
           <div id="quote-image">
           </div>
-          <div id="text">
+          <div id="text" className="quoteText">
           { this.state.currentQuote }
           </div>
-          <div id="author">
-          { this.state.currentAuthor }
+          <div id="author" className="quoteAuthor">
+          -- { this.state.currentAuthor }
           </div>
         </div>
-        <div id="buttons">
-          <a id="tweet-quote" href= { tweetLink } target="_blank">Tweet</a>
-          <button id="new-quote" onClick={this.newQuote}>New Quote!</button>
+        <div id="buttons" className="buttons">
+          <div className='leftButtons'>
+            <a id="tweet-quote" href= { tweetLink } target="_blank" className="fa fab fa-twitter"> </a>
+          </div>
+          <div className="rightButtons">
+            <button id="new-quote" onClick={this.newQuote} className="button">New Quote!</button>
+          </div>
         </div>
       </div>
     );
